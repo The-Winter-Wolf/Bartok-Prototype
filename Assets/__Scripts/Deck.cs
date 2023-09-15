@@ -94,18 +94,18 @@ public class Deck : MonoBehaviour
             PT_XMLHashList xPips = xCardDefs[i]["pip"];
             if (xPips != null) {
                 for (int j=0; j<xPips.Count; j++) {
-                    // Обойти все элементы <pip>
-                    deco = new Decorator();
-                    // Элементы <pip> в <card> обрабатываются классом Decorator
-                    deco.type = "pip";
-                    deco.flip = (xPips[j].att("flip") == "1");
-                    deco.loc.x = float.Parse(xPips[j].att("x"));
-                    deco.loc.y = float.Parse(xPips[j].att("y"));
-                    deco.loc.z = float.Parse(xPips[j].att("z"));
-                    if (xPips[j].HasAtt("scale")) {
-                        deco.scale = float.Parse(xPips[j].att("scale"));
-                    }
-                    cDef.pips.Add(deco);
+                // Обойти все элементы <pip>
+                deco = new Decorator();
+                // Элементы <pip> в <card> обрабатываются классом Decorator
+                deco.type = "pip";
+                deco.flip = (xPips[j].att("flip") == "1");
+                deco.loc.x = float.Parse(xPips[j].att("x"));
+                deco.loc.y = float.Parse(xPips[j].att("y"));
+                deco.loc.z = float.Parse(xPips[j].att("z"));
+                if (xPips[j].HasAtt("scale")) {
+                    deco.scale = float.Parse(xPips[j].att("scale"));
+                }
+                cDef.pips.Add(deco);
                 }
             }
 
