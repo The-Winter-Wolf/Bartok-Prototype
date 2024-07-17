@@ -64,6 +64,13 @@ public class CardBartok : Card
 
     void Update()
     {
+
+        // Выйти из приложения
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
+
         switch (state) {
             case CBState.toHand:
             case CBState.toTarget:
